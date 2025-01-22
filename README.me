@@ -1,0 +1,80 @@
+# RAG Forex Trading Advisor
+
+This project implements a **Retrieval-Augmented Generation (RAG)** system designed to provide insights and advice on Forex trading. It uses open-source tools such as Pinecone, LangChain, SBERT embeddings, and Hugging Face-hosted language models like Llama 2 or Falcon.
+
+## Features
+- **Data Retrieval**: Extract and store Forex-related information from online sources.
+- **Vector Database**: Pinecone is used to store and retrieve embeddings of financial texts.
+- **LLM Integration**: Combines data retrieval with context-aware response generation using Llama 2.
+- **Scalable Architecture**: Modular and scalable for additional data sources or advanced analytics.
+
+## Components
+
+1. **LLM**: Llama 2 (via Hugging Face Hub) for generating responses.
+2. **Frameworks**: LangChain for orchestrating data retrieval and response generation.
+3. **Vector Database**: Pinecone for efficient vector search.
+4. **Embeddings**: SBERT for text embedding generation.
+5. **Data Extraction**: Online Forex news and reports are ingested and preprocessed.
+
+## Installation
+
+### Prerequisites
+- Python 3.8+
+- Pinecone API key
+- Hugging Face account and access token
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/rag-forex-advisor.git
+   cd rag-forex-advisor
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Set up Pinecone:
+   - Sign up at [Pinecone](https://www.pinecone.io/) and get your API key.
+   - Replace `<YOUR_PINECONE_API_KEY>` and `<YOUR_PINECONE_ENV>` in the code with your credentials.
+
+4. Set up Hugging Face:
+   - Create a Hugging Face account and get an access token from [Hugging Face Tokens](https://huggingface.co/settings/tokens).
+   - Ensure the LLM repository (e.g., Llama 2) is accessible to your account.
+
+## Usage
+
+### Ingest Data
+Run the script to ingest Forex-related data into the Pinecone vector database:
+```bash
+python main.py
+```
+
+### Query the System
+Once the data is ingested, the system is ready to answer queries. Example query:
+```
+What are the current trends in the EUR/USD pair?
+```
+The RAG pipeline retrieves relevant documents and generates an insightful response.
+
+## Directory Structure
+```
+.
+├── main.py              # Main script to run the RAG system
+├── requirements.txt     # Dependencies
+├── README.md            # Project documentation
+```
+
+## Future Improvements
+- Add more sophisticated data cleaning and processing techniques.
+- Support additional Forex-related metrics and tools (e.g., sentiment analysis).
+- Implement user authentication and a web-based interface.
+
+## License
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+Developed with ❤️ by CRICECA.
+
